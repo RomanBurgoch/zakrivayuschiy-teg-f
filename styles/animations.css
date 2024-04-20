@@ -1,14 +1,72 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+.sparks {
+  opacity: 0;
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.05s linear;
+}
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-filling);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-filling);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-filling);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-filling);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-filling);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: liked-heart 0.3s 0.1s ease-in;
+  transform-origin: center;
+  animation-direction: alternate-reverse;
+}
+
+.like-icon.is-liked .sparks {
+  animation: liked-sparks 0.3s 0.3s ease-in;
+  transform-origin: center;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes liked-heart {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes liked-sparks {
+  to {
+    opacity: 1;
+  }
+}
