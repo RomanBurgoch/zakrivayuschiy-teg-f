@@ -2,9 +2,11 @@
   opacity: 0;
 }
 
+/* Переход для контура на строке 47 */
+
 .like-icon .core {
   fill: transparent;
-  transition: fill 0.3s 0.05s linear;
+  transition: fill 0.03s 0.05s linear;
 }
 
 .like-icon:hover .core {
@@ -50,13 +52,13 @@
 .like-icon.is-liked .heart {
   animation: liked-heart 0.3s 0.1s ease-in;
   transform-origin: center;
-  animation-direction: alternate-reverse;
+  animation-direction: alternate;
 }
 
 .like-icon.is-liked .sparks {
   animation: liked-sparks 0.3s 0.3s ease-in;
   transform-origin: center;
-  animation-direction: alternate-reverse;
+  animation-direction: alternate;
 }
 
 @keyframes liked-heart {
